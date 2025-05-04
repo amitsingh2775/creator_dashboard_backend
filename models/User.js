@@ -7,7 +7,10 @@ const userSchema = new mongoose.Schema({
   role: { type: String, enum: ['user', 'admin'], default: 'user' },
   credits: { type: Number, default: 0 },
   savedFeeds: [String],
-  lastLogin: Date,
+  lastLoginBonus: {
+    type: Date,
+    default: null,
+  },
 });
 
 module.exports = mongoose.model('User', userSchema);
